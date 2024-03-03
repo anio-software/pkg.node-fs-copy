@@ -1,27 +1,17 @@
-import nodeFsGetPathTypeSync from "@anio-js-core-foundation/node-fs-get-path-type-sync"
+import createFSObject from "@anio-node-foundation/fs-api"
 
-import copySymbolicLink from "./copySymbolicLink.mjs"
-import copyFile from "./copyFile.mjs"
-import copyDirectory from "./copyDirectory.mjs"
+import sync_impl from "./auto/sync.mjs"
+import async_impl from "./auto/async.mjs"
 
-const copy_fn = {
-	"link->dir": copySymbolicLink,
-	"link->file": copySymbolicLink,
-	"link->broken": copySymbolicLink,
-	"file": copyFile,
-	"dir": copyDirectory
+const async_fs = createFSObject({sync: false})
+const sync_fs = createFSObject({sync: true})
+
+function nodeFsCopy(src, dest) {
+	return async_impl(async_fs, src, dest)
 }
 
-export default function(src, dest) {
-	const src_type = nodeFsGetPathTypeSync(src)
-
-	if (src_type === false) {
-		throw new Error(`Source path '${src}' does not exist.`)
-	} else if (!(src_type in copy_fn)) {
-		throw new Error(`I don't know how to copy a path of type '${src_type}'.`)
-	}
-
-	const fn = copy_fn[src_type]
-
-	return fn(src, dest)
+nodeFsCopy.sync = function(src, dest) {
+	return sync_impl(sync_fs, src, dest)
 }
+
+export default nodeFsCopy

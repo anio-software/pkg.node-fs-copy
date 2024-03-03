@@ -1,15 +1,15 @@
-# @anio-js-foundation/node-fs-copy-sync
+# @anio-node-foundation/fs-copy
 
-Synchronously copy a path.
+Copy a path of any type.
 
 ```js
-import nodeFsCopySync from "@anio-js-foundation/node-fs-copy-sync"
+import nodeFsCopy from "@anio-node-foundation/fs-copy"
 
 console.log(
-	nodeFsCopySync("examples/src", "examples/dest")
+	await nodeFsCopy("examples/src", "examples/dest")
 )
 ```
 
 Todo: add function to copy with permissions/owner 
 
-Could be named `nodeFsCopySync.faithful`
+Could be implemented as `nodeFsCopy(src, dest, {faithful: true})`

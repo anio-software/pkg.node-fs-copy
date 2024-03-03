@@ -1,5 +1,7 @@
-import nodeFsCopySync from "../src/index.mjs"
+import nodeFsCopy from "../src/index.mjs"
 
 console.log(
-	nodeFsCopySync("examples/src", "examples/dest/p")
+	await nodeFsCopy("examples/src", "examples/dest/p")
 )
+
+console.log("done")
