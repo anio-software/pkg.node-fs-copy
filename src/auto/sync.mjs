@@ -46,6 +46,10 @@ const copy_map = {
 export default function(fs_object, src, dest) {
 	const path_type = nodeFsGetPathType.sync(src)
 
+	if (path_type === false) {
+		throw new Error(`source path '${src}' does not exist.`)
+	}
+
 	if (!(path_type in copy_map)) {
 		throw new Error(`Don't know how to copy path of type '${path_type}'.`)
 	}
