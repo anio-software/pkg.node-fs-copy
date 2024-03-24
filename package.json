@@ -2,7 +2,7 @@
   "name": "@anio-node-foundation/fs-copy",
   "version": "2.0.1",
   "description": "Copy a path of any type.",
-  "main": "./dist/package.mjs",
+  "main": "./build/package.mjs",
   "author": "Anio Software <info@anio.software>",
   "license": "MIT",
   "repository": {
@@ -13,12 +13,13 @@
     "@anio-node-foundation/fs-api": "^2.1.0",
     "@anio-node-foundation/fs-get-path-type": "^1.0.1",
     "@anio-node-foundation/fs-scandir": "^2.0.1",
-    "@anio-software/npm-package-bundler": "^1.0.0"
+    "@vipen/target-js": "^0.7.0",
+    "vipen": "^0.1.0"
   },
   "scripts": {
-    "prepare": "./node_modules/.bin/npm-package-bundler ."
+    "prepare": "./node_modules/.bin/vipen ."
   },
   "files": [
-    "./dist/package.mjs"
+    "./build/package.mjs"
   ]
 }
