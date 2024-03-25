@@ -1,6 +1,6 @@
 {
   "name": "@anio-node-foundation/fs-copy",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Copy a path of any type.",
   "main": "./build/package.mjs",
   "author": "Anio Software <info@anio.software>",
