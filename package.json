@@ -11,7 +11,6 @@
   },
   "devDependencies": {
     "@anio-fs/api": "^4.0.0",
-    "@anio-node-foundation/fs-api": "^3.0.0",
     "@anio-node-foundation/fs-get-path-type": "^2.0.0",
     "@anio-node-foundation/fs-scandir": "^3.0.0",
     "@vipen/target-js": "^0.14.0",
