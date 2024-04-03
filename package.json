@@ -1,5 +1,5 @@
 {
-  "name": "@anio-node-foundation/fs-copy",
+  "name": "@anio-fs/copy",
   "version": "3.0.0",
   "description": "Copy a path of any type.",
   "main": "./dist/package.min.mjs",
@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anio-node-foundation/fs-copy.git"
+    "url": "git+https://github.com/anio-fs-org/copy.git"
   },
   "devDependencies": {
     "@anio-fs/api": "^4.0.0",

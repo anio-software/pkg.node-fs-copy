@@ -1,9 +1,9 @@
-# @anio-node-foundation/fs-copy
+# @anio-fs/copy
 
 Copy a path of any type.
 
 ```js
-import {copy} from "@anio-node-foundation/fs-copy"
+import {copy} from "@anio-fs/copy"
 
 console.log(
 	await copy("examples/src", "examples/dest")
