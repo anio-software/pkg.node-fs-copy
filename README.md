@@ -3,10 +3,10 @@
 Copy a path of any type.
 
 ```js
-import nodeFsCopy from "@anio-node-foundation/fs-copy"
+import {copy} from "@anio-node-foundation/fs-copy"
 
 console.log(
-	await nodeFsCopy("examples/src", "examples/dest")
+	await copy("examples/src", "examples/dest")
 )
 ```
 
