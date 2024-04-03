@@ -1,5 +1,5 @@
 import nodeFsGetPathType from "@anio-node-foundation/fs-get-path-type"
-import nodeFsScandir from "@anio-node-foundation/fs-scandir"
+import {scandir} from "@anio-fs/scandir"
 import path from "node:path"
 
 async function copySymbolicLink(fs_object, src, dest) {
@@ -17,7 +17,7 @@ async function copyDirectory(fs_object, src, dest) {
 		recursive: true
 	})
 
-	await nodeFsScandir(src, {
+	await scandir(src, {
 		async callback({type, relative_path, absolute_path}) {
 			const entry_src = absolute_path
 			const entry_dest = path.join(dest, relative_path)
