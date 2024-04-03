@@ -1,4 +1,4 @@
-import nodeFsGetPathType from "@anio-node-foundation/fs-get-path-type"
+import {getTypeOfPath} from "@anio-fs/path-type"
 import {scandir} from "@anio-fs/scandir"
 import path from "node:path"
 
@@ -44,7 +44,7 @@ const copy_map = {
 }
 
 export default async function(fs_object, src, dest) {
-	const path_type = await nodeFsGetPathType(src)
+	const path_type = await getTypeOfPath(src)
 
 	if (path_type === false) {
 		throw new Error(`source path '${src}' does not exist.`)

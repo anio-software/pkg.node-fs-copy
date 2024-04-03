@@ -1,6 +1,7 @@
 import {generateFromTemplate} from "vipen/autogenerate"
 
 const asyncToSync = {
+	"import {getTypeOfPath} from \"@anio-fs/path-type\"": "import {getTypeOfPathSync} from \"@anio-fs/path-type\"",
 	"import {scandir} from \"@anio-fs/scandir\"": "import {scandirSync} from \"@anio-fs/scandir\"",
 	"async function copySymbolicLink(": "function copySymbolicLink(",
 	"await fs_object.readlink": "fs_object.readlink",
@@ -15,7 +16,7 @@ const asyncToSync = {
 	"await copyDirectory(": "copyDirectory(",
 	"await copyFile(": "copyFile(",
 	"export default async function": "export default function",
-	"await nodeFsGetPathType(": "nodeFsGetPathType.sync(",
+	"await getTypeOfPath(": "getTypeOfPathSync(",
 	"await copy_fn(": "copy_fn("
 }
 
