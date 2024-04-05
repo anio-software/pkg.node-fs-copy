@@ -1,19 +1,16 @@
+import {readlink, symlink, copyFile, mkdir} from "@anio-fs/api/sync"
 import {getTypeOfPathSync} from "@anio-fs/path-type"
 import {scandirSync} from "@anio-fs/scandir"
 import path from "node:path"
 
-function copySymbolicLink(fs_object, src, dest) {
-	const link = fs_object.readlink(src)
+function copySymbolicLink(src, dest) {
+	const link = readlink(src)
 
-	fs_object.symlink(link, dest)
+	symlink(link, dest)
 }
 
-function copyFile(fs_object, src, dest) {
-	fs_object.copyFile(src, dest)
-}
-
-function copyDirectory(fs_object, src, dest) {
-	fs_object.mkdir(dest, {
+function copyDirectory(src, dest) {
+	mkdir(dest, {
 		recursive: true
 	})
 
@@ -22,7 +19,7 @@ function copyDirectory(fs_object, src, dest) {
 			const entry_src = absolute_path
 			const entry_dest = path.join(dest, relative_path)
 
-			const args = [fs_object, entry_src, entry_dest]
+			const args = [entry_src, entry_dest]
 
 			if (type === "link") {
 				copySymbolicLink(...args)
@@ -43,7 +40,7 @@ const copy_map = {
 	"dir": copyDirectory
 }
 
-export default function(fs_object, src, dest) {
+export default function(src, dest) {
 	const path_type = getTypeOfPathSync(src)
 
 	if (path_type === false) {
@@ -56,5 +53,5 @@ export default function(fs_object, src, dest) {
 
 	const copy_fn = copy_map[path_type]
 
-	return copy_fn(fs_object, src, dest)
+	return copy_fn(src, dest)
 }

@@ -1,19 +1,16 @@
+import {readlink, symlink, copyFile, mkdir} from "@anio-fs/api/async"
 import {getTypeOfPath} from "@anio-fs/path-type"
 import {scandir} from "@anio-fs/scandir"
 import path from "node:path"
 
-async function copySymbolicLink(fs_object, src, dest) {
-	const link = await fs_object.readlink(src)
+async function copySymbolicLink(src, dest) {
+	const link = await readlink(src)
 
-	await fs_object.symlink(link, dest)
+	await symlink(link, dest)
 }
 
-async function copyFile(fs_object, src, dest) {
-	await fs_object.copyFile(src, dest)
-}
-
-async function copyDirectory(fs_object, src, dest) {
-	await fs_object.mkdir(dest, {
+async function copyDirectory(src, dest) {
+	await mkdir(dest, {
 		recursive: true
 	})
 
@@ -22,7 +19,7 @@ async function copyDirectory(fs_object, src, dest) {
 			const entry_src = absolute_path
 			const entry_dest = path.join(dest, relative_path)
 
-			const args = [fs_object, entry_src, entry_dest]
+			const args = [entry_src, entry_dest]
 
 			if (type === "link") {
 				await copySymbolicLink(...args)
@@ -43,7 +40,7 @@ const copy_map = {
 	"dir": copyDirectory
 }
 
-export default async function(fs_object, src, dest) {
+export default async function(src, dest) {
 	const path_type = await getTypeOfPath(src)
 
 	if (path_type === false) {
@@ -56,5 +53,5 @@ export default async function(fs_object, src, dest) {
 
 	const copy_fn = copy_map[path_type]
 
-	return await copy_fn(fs_object, src, dest)
+	return await copy_fn(src, dest)
 }
