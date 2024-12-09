@@ -14,6 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/anio-fs-org/copy.git"
   },
+  "type": "module",
   "devDependencies": {
     "@aniojs-private/node-async-sync-fs": "^0.2.0",
     "@aniojs/node-fs-path-type": "^1.0.1",
