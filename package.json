@@ -1,5 +1,5 @@
 {
-  "name": "@anio-fs/copy",
+  "name": "@aniojs/node-fs-copy",
   "version": "0.0.0",
   "author": "Anio Software <info@anio.software>",
   "description": "Copy a path of any type.",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anio-fs-org/copy.git"
+    "url": "git+https://github.com/aniojs-org/node-fs-copy.git"
   },
   "type": "module",
   "devDependencies": {
