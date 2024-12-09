@@ -86,6 +86,10 @@ export async function implementation(
 ) : Promise<undefined> {
 	const context = useContext(wrapped_context, 0)
 
+	context.log.debug(
+		`attempting to copy '${src}' to '${dest}'.`
+	)
+
 	const path_type = await dependencies.getTypeOfPath(src)
 
 	if (path_type === "nonExisting") {

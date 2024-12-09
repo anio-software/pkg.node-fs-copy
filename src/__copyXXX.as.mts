@@ -104,6 +104,10 @@ export async function implementation(
 //>) : undefined {
 	const context = useContext(wrapped_context, 0)
 
+	context.log.debug(
+		`attempting to copy '${src}' to '${dest}'.`
+	)
+
 	const path_type = await dependencies.getTypeOfPath(src)
 //>	const path_type = dependencies.getTypeOfPath(src)
 
