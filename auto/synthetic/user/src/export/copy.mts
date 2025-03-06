@@ -6,7 +6,7 @@ import {createContext} from "@fourtune/realm-js/v0/runtime"
 
 import {copyFactory as factory} from "#~synthetic/user/export/copyFactory.mts"
 
-const fn = factory(createContext())
+let __fnImplementation: any = null
 
 /**
  * @brief Asynchronously copy a path.
@@ -16,5 +16,7 @@ const fn = factory(createContext())
  * @param dest Target path.
  */
 export async function copy(src: string, dest: string) : Promise<undefined> {
-	return await fn(src, dest)
+	if (__fnImplementation === null) __fnImplementation = factory(createContext());
+
+	return await __fnImplementation(src, dest)
 }
