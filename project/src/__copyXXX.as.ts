@@ -79,11 +79,11 @@ const copy_map : {
 	[T in ValidPathType]: (src: string, dst: string) => Promise<undefined>
 //>	[T in ValidPathType]: (src: string, dst: string) => undefined
 } = {
-	"linkToDir": copySymbolicLink,
-	"linkToFile": copySymbolicLink,
-	"brokenLink": copySymbolicLink,
-	"regularFile": copyFile,
-	"regularDir": copyDirectory
+	"link:dir": copySymbolicLink,
+	"link:file": copySymbolicLink,
+	"link:broken": copySymbolicLink,
+	"file:regular": copyFile,
+	"dir:regular": copyDirectory
 }
 
 /**
