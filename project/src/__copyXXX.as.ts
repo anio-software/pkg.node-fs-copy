@@ -10,8 +10,8 @@ import path from "node:path"
 
 import type {PathType} from "@anio-software/pkg.node-fs-path-type"
 
-import {getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
-//>import {getTypeOfPathSync as getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
+import type {getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
+//>import type {getTypeOfPathSync as getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
 
 import {scandirCallback} from "@aniojs/node-fs-scandir"
 //>import {scandirSyncCallback as scandirCallback} from "@aniojs/node-fs-scandir"
