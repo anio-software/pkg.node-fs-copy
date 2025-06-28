@@ -5,12 +5,13 @@ import {
 
 export type __EnkoreFunctionDependencies = {}
 
+import type {CopyOptions} from "#~export/CopyOptions.ts"
+
 export async function __implementation(
 //>export function __implementationSync(
 	contextOptions: EnkoreJSRuntimeContextOptions,
 	dependencies: __EnkoreFunctionDependencies,
-	src: string,
-	dest: string
+	options: CopyOptions
 ): Promise<undefined> {
 //>): undefined {
 	const context = createContext(contextOptions, 0)
