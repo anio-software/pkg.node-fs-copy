@@ -10,6 +10,12 @@
         "project/src/DependenciesSync.ts": {
             "hash": "614fe04834ac9b7b1d99c8544f698fde86d47e6902e9d4b158e91d17466b8d1e"
         },
+        "project/src/copyDirectory.ts": {
+            "hash": "4418fa70ed6bd2a56a7327b92e740d14760612694f6d5e614eee2e9c7bb773a2"
+        },
+        "project/src/copyDirectorySync.ts": {
+            "hash": "32dc56b15c731a9b4ebd154fde684fa1ef0c66c8c3e0f8fa5ab22821d03b8b91"
+        },
         "project/src/copyFile.ts": {
             "hash": "6f412b509ce6a8351f82abc37ff6c9e6a77f1a3ebfa675f211f4835ac670e2b1"
         },
