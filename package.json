@@ -15,7 +15,6 @@
     "@anio-software/enkore.core": "^0.11.2",
     "@anio-software/enkore.target-js-node": "^0.0.259-canary-390192b1-2480e47a",
     "@aniojs-private/node-async-sync-fs": "^0.3.0",
-    "@aniojs/node-fs-path-type": "^1.0.6",
     "@aniojs/node-fs-scandir": "^0.2.4"
   }
 }
