@@ -53,10 +53,10 @@ async function copyDirectory(
 			const args: [string, string] = [entry_src, entry_dest]
 
 			if (
-				type === "linkToFile" ||
-				type === "linkToDir"  ||
-				type === "brokenLink"
-				) {
+			    type === "linkToFile" ||
+			    type === "linkToDir"  ||
+			    type === "brokenLink"
+			    ) {
 				await copySymbolicLink(...args)
 //>				copySymbolicLink(...args)
 			} else if (type === "regularDir") {
