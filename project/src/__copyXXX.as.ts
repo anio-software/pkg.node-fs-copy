@@ -111,10 +111,7 @@ export async function __implementation(
 		throw new Error(`source path '${src}' does not exist.`)
 	}
 
-	if (
-		(!(pathType in copyMap)) ||
-		pathType === "unknown"
-	) {
+	if (!(pathType in copyMap)) {
 		throw new Error(`Don't know how to copy path of type '${pathType}'.`)
 	}
 
