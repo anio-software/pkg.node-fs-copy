@@ -105,9 +105,7 @@ export async function __implementation(
 //>) : undefined {
 	const context = createContext(contextOptions, 0)
 
-	context.log.debug(
-		`attempting to copy '${src}' to '${dest}'.`
-	)
+	context.log.debug(`attempting to copy '${src}' to '${dest}'.`)
 
 	const path_type = await dependencies.getTypeOfPath(src)
 //>	const path_type = dependencies.getTypeOfPath(src)
