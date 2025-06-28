@@ -115,8 +115,8 @@ export async function __implementation(
 		throw new Error(`Don't know how to copy path of type '${pathType}'.`)
 	}
 
-	const copy_fn = copyMap[pathType]
+	const copyFn = copyMap[pathType]
 
-	await copy_fn(src, dest)
-//>	copy_fn(src, dest)
+	await copyFn(src, dest)
+//>	copyFn(src, dest)
 }
