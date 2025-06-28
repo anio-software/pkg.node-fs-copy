@@ -97,8 +97,8 @@ const copy_map : {
  * @param src Existing path.
  * @param dest Target path.
  */
-export async function implementation(
-//>export function implementation(
+export async function __implementation(
+//>export function __implementationSync(
 	contextOptions: EnkoreJSRuntimeContextOptions,
 	dependencies: AnioJsDependencies,
 	src: string,
