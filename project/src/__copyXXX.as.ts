@@ -50,7 +50,7 @@ async function copyDirectory(
 			const entry_src = absolute_path
 			const entry_dest = path.join(dest, relative_path)
 
-			const args : [string, string] = [entry_src, entry_dest]
+			const args: [string, string] = [entry_src, entry_dest]
 
 			if (
 				type === "linkToFile" ||
@@ -72,7 +72,7 @@ async function copyDirectory(
 	return undefined
 }
 
-const copyMap : {
+const copyMap: {
 	[T in ValidPathType]: (src: string, dst: string) => Promise<undefined>
 //>	[T in ValidPathType]: (src: string, dst: string) => undefined
 } = {
@@ -98,8 +98,8 @@ export async function __implementation(
 	dependencies: __EnkoreFunctionDependencies,
 	src: string,
 	dest: string
-) : Promise<undefined> {
-//>) : undefined {
+): Promise<undefined> {
+//>): undefined {
 	const context = createContext(contextOptions, 0)
 
 	context.log.debug(`attempting to copy '${src}' to '${dest}'.`)
