@@ -7,8 +7,8 @@ import {readlink, symlink, copyFile, mkdir} from "@anio-software/pkg-private.nod
 //>import {readlink, symlink, copyFile, mkdir} from "@anio-software/pkg-private.node-consistent-fs/sync"
 import type {getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
 //>import type {getTypeOfPathSync as getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
-import {scandirCallback} from "@aniojs/node-fs-scandir"
-//>import {scandirSyncCallback as scandirCallback} from "@aniojs/node-fs-scandir"
+import {scandirCallback} from "@anio-software/pkg.node-fs-scandir"
+//>import {scandirSyncCallback as scandirCallback} from "@anio-software/pkg.node-fs-scandir"
 
 import type {ValidPathType} from "@anio-software/pkg.node-fs-path-type"
 import path from "node:path"
