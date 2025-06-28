@@ -13,6 +13,8 @@ import {scandirCallback} from "@aniojs/node-fs-scandir"
 import type {ValidPathType} from "@anio-software/pkg.node-fs-path-type"
 import path from "node:path"
 
+type CopyablePathType = ValidPathType | "link:error"
+
 export type __EnkoreFunctionDependencies = {
 	getTypeOfPath: typeof getTypeOfPath,
 	scandirCallback: typeof scandirCallback
@@ -73,12 +75,13 @@ async function copyDirectory(
 }
 
 const copyMap: {
-	[T in ValidPathType]: (src: string, dst: string) => Promise<undefined>
-//>	[T in ValidPathType]: (src: string, dst: string) => undefined
+	[T in CopyablePathType]: (src: string, dst: string) => Promise<undefined>
+//>	[T in CopyablePathType]: (src: string, dst: string) => undefined
 } = {
 	"link:dir"    : copySymbolicLink,
 	"link:file"   : copySymbolicLink,
 	"link:broken" : copySymbolicLink,
+	"link:error"  : copySymbolicLink,
 	"file:regular": copyFile,
 	"dir:regular" : copyDirectory
 }
