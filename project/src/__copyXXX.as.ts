@@ -54,8 +54,7 @@ async function copyDirectory(
 
 			const args: [string, string] = [entrySrc, entryDest]
 
-			if (
-			    type === "linkToFile" ||
+			if (type === "linkToFile" ||
 			    type === "linkToDir"  ||
 			    type === "brokenLink"
 			    ) {
