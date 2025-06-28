@@ -3,108 +3,8 @@ import {
 	createContext
 } from "@anio-software/enkore.js-runtime"
 
-import {readlink, symlink, mkdir, copyFile as _copyFile} from "@anio-software/pkg-private.node-consistent-fs/async"
-//>import {readlink, symlink, mkdir, copyFile as _copyFile} from "@anio-software/pkg-private.node-consistent-fs/sync"
-import type {getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
-//>import type {getTypeOfPathSync as getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
-import {scandirCallback} from "@anio-software/pkg.node-fs-scandir"
-//>import {scandirSyncCallback as scandirCallback} from "@anio-software/pkg.node-fs-scandir"
+export type __EnkoreFunctionDependencies = {}
 
-import type {ValidPathType} from "@anio-software/pkg.node-fs-path-type"
-import path from "node:path"
-
-type CopyablePathType = ValidPathType | "link:error"
-
-export type __EnkoreFunctionDependencies = {
-	getTypeOfPath: typeof getTypeOfPath,
-	scandirCallback: typeof scandirCallback
-}
-
-async function copySymbolicLink(
-//>function copySymbolicLink(
-	src: string,
-	dest: string
-) {
-	const link = await readlink(src)
-//>	const link = readlink(src)
-
-	await symlink(link, dest)
-//>	symlink(link, dest)
-
-	return undefined
-}
-
-async function copyFile(
-//>function copyFile(
-	src: string,
-	dest: string
-) {
-	await _copyFile(src, dest)
-//>	_copyFile(src, dest)
-
-	return undefined
-}
-
-async function copyDirectory(
-//>function copyDirectory(
-	src: string,
-	dest: string
-) {
-	await mkdir(dest, {
-//>	mkdir(dest, {
-		recursive: true
-	})
-
-	await scandirCallback(src, {
-//>	scandirCallback(src, {
-		async callback(entry) {
-//>		callback(entry) {
-			const {type, relativePath, absolutePath} = entry
-			const entrySrc = absolutePath
-			const entryDest = path.join(dest, relativePath)
-
-			const args: [string, string] = [entrySrc, entryDest]
-
-			if (type === "linkToFile" ||
-			    type === "linkToDir"  ||
-			    type === "brokenLink"
-			    ) {
-				await copySymbolicLink(...args)
-//>				copySymbolicLink(...args)
-			} else if (type === "regularDir") {
-				await copyDirectory(...args)
-//>				copyDirectory(...args)
-			} else {
-				await copyFile(...args)
-//>				copyFile(...args)
-			}
-		}
-	})
-
-	return undefined
-}
-
-const copyMap: {
-	[T in CopyablePathType]: (src: string, dst: string) => Promise<undefined>
-//>	[T in CopyablePathType]: (src: string, dst: string) => undefined
-} = {
-	"link:dir"    : copySymbolicLink,
-	"link:file"   : copySymbolicLink,
-	"link:broken" : copySymbolicLink,
-	"link:error"  : copySymbolicLink,
-	"file:regular": copyFile,
-	"dir:regular" : copyDirectory
-}
-
-/**
- * @brief Asynchronously copy a path.
-//> * @brief Synchronously copy a path.
- * @description
- * Asynchronously copies path `src` to `dest`.
-//> * Synchronously copies path `src` to `dest`.
- * @param src Existing path.
- * @param dest Target path.
- */
 export async function __implementation(
 //>export function __implementationSync(
 	contextOptions: EnkoreJSRuntimeContextOptions,
@@ -114,24 +14,4 @@ export async function __implementation(
 ): Promise<undefined> {
 //>): undefined {
 	const context = createContext(contextOptions, 0)
-
-	context.log.debug(`attempting to copy '${src}' to '${dest}'.`)
-
-	const pathType = await dependencies.getTypeOfPath(src)
-//>	const pathType = dependencies.getTypeOfPath(src)
-
-	if (pathType === "nonExisting") {
-		throw new Error(`source path '${src}' does not exist.`)
-	} else if (pathType === "error") {
-		throw new Error(`unable to access path '${src}'.`)
-	}
-
-	if (!(pathType in copyMap)) {
-		throw new Error(`Don't know how to copy path of type '${pathType}'.`)
-	}
-
-	const copyFn = copyMap[pathType]
-
-	await copyFn(src, dest)
-//>	copyFn(src, dest)
 }
