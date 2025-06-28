@@ -109,6 +109,8 @@ export async function __implementation(
 
 	if (pathType === "nonExisting") {
 		throw new Error(`source path '${src}' does not exist.`)
+	} else if (pathType === "error") {
+		throw new Error(`unable to access path '${src}'.`)
 	}
 
 	if (!(pathType in copyMap)) {
