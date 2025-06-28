@@ -72,7 +72,7 @@ async function copyDirectory(
 	return undefined
 }
 
-const copy_map : {
+const copyMap : {
 	[T in ValidPathType]: (src: string, dst: string) => Promise<undefined>
 //>	[T in ValidPathType]: (src: string, dst: string) => undefined
 } = {
@@ -112,13 +112,13 @@ export async function __implementation(
 	}
 
 	if (
-		(!(path_type in copy_map)) ||
+		(!(path_type in copyMap)) ||
 		path_type === "unknown"
 	) {
 		throw new Error(`Don't know how to copy path of type '${path_type}'.`)
 	}
 
-	const copy_fn = copy_map[path_type]
+	const copy_fn = copyMap[path_type]
 
 	await copy_fn(src, dest)
 //>	copy_fn(src, dest)
