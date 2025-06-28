@@ -3,8 +3,8 @@ import {
 	createContext
 } from "@anio-software/enkore.js-runtime"
 
-import {readlink, symlink, copyFile, mkdir} from "@anio-software/pkg-private.node-consistent-fs/async"
-//>import {readlink, symlink, copyFile, mkdir} from "@anio-software/pkg-private.node-consistent-fs/sync"
+import {readlink, symlink, mkdir, copyFile as _copyFile} from "@anio-software/pkg-private.node-consistent-fs/async"
+//>import {readlink, symlink, mkdir, copyFile as _copyFile} from "@anio-software/pkg-private.node-consistent-fs/sync"
 import type {getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
 //>import type {getTypeOfPathSync as getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
 import {scandirCallback} from "@anio-software/pkg.node-fs-scandir"
@@ -30,6 +30,17 @@ async function copySymbolicLink(
 
 	await symlink(link, dest)
 //>	symlink(link, dest)
+
+	return undefined
+}
+
+async function copyFile(
+//>function copyFile(
+	src: string,
+	dest: string
+) {
+	await _copyFile(src, dest)
+//>	_copyFile(src, dest)
 
 	return undefined
 }
