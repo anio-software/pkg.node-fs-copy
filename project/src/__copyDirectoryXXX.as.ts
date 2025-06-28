@@ -11,6 +11,7 @@ export async function copyDirectory(
 	destination: string
 ): Promise<boolean> {
 //>): boolean {
+	context.log.trace(`copy directory '${source}'`)
 
 	return false
 }

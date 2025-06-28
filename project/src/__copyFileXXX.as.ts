@@ -11,6 +11,7 @@ export async function copyFile(
 	destination: string
 ): Promise<boolean> {
 //>): boolean {
+	context.log.trace(`copy file '${source}'`)
 
 	return false
 }

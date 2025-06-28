@@ -11,6 +11,7 @@ export async function copySymbolicLink(
 	destination: string
 ): Promise<boolean> {
 //>): boolean {
+	context.log.trace(`copy symbolic link '${source}'`)
 
 	return false
 }
