@@ -5,16 +5,13 @@ import {
 
 import {readlink, symlink, copyFile, mkdir} from "@anio-software/pkg-private.node-consistent-fs/async"
 //>import {readlink, symlink, copyFile, mkdir} from "@anio-software/pkg-private.node-consistent-fs/sync"
-
-import path from "node:path"
-
-import type {ValidPathType} from "@anio-software/pkg.node-fs-path-type"
-
 import type {getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
 //>import type {getTypeOfPathSync as getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
-
 import {scandirCallback} from "@aniojs/node-fs-scandir"
 //>import {scandirSyncCallback as scandirCallback} from "@aniojs/node-fs-scandir"
+
+import type {ValidPathType} from "@anio-software/pkg.node-fs-path-type"
+import path from "node:path"
 
 export type __EnkoreFunctionDependencies = {
 	getTypeOfPath: typeof getTypeOfPath,
