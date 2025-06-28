@@ -6,5 +6,7 @@
 /src/copyDirectorySync.ts
 /src/copyFile.ts
 /src/copyFileSync.ts
+/src/copySymbolicLink.ts
+/src/copySymbolicLinkSync.ts
 /src/copy.ts
 /src/copySync.ts
