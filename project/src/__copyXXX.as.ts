@@ -8,10 +8,10 @@ import {readlink, symlink, copyFile, mkdir} from "@aniojs-private/node-async-syn
 
 import path from "node:path"
 
-import type {PathType} from "@aniojs/node-fs-path-type"
+import type {PathType} from "@anio-software/pkg.node-fs-path-type"
 
-import {getTypeOfPath} from "@aniojs/node-fs-path-type"
-//>import {getTypeOfPathSync as getTypeOfPath} from "@aniojs/node-fs-path-type"
+import {getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
+//>import {getTypeOfPathSync as getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
 
 import {scandirCallback} from "@aniojs/node-fs-scandir"
 //>import {scandirSyncCallback as scandirCallback} from "@aniojs/node-fs-scandir"
