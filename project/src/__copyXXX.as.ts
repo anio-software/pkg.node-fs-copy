@@ -16,7 +16,7 @@ import {getTypeOfPath} from "@aniojs/node-fs-path-type"
 import {scandirCallback} from "@aniojs/node-fs-scandir"
 //>import {scandirSyncCallback as scandirCallback} from "@aniojs/node-fs-scandir"
 
-export type AnioJsDependencies = {
+export type __EnkoreFunctionDependencies = {
 	getTypeOfPath: typeof getTypeOfPath,
 	scandirCallback: typeof scandirCallback
 }
@@ -100,7 +100,7 @@ const copy_map : {
 export async function __implementation(
 //>export function __implementationSync(
 	contextOptions: EnkoreJSRuntimeContextOptions,
-	dependencies: AnioJsDependencies,
+	dependencies: __EnkoreFunctionDependencies,
 	src: string,
 	dest: string
 ) : Promise<undefined> {
