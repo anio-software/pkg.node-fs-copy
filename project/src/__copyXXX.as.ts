@@ -1,4 +1,7 @@
-import {useContext, type RuntimeWrappedContextInstance} from "@fourtune/realm-js/runtime"
+import {
+	type EnkoreJSRuntimeContextOptions,
+	createContext
+} from "@anio-software/enkore.js-runtime"
 
 import {readlink, symlink, copyFile, mkdir} from "@aniojs-private/node-async-sync-fs/async"
 //>import {readlink, symlink, copyFile, mkdir} from "@aniojs-private/node-async-sync-fs/sync"
@@ -96,13 +99,13 @@ const copy_map : {
  */
 export async function implementation(
 //>export function implementation(
-	wrapped_context: RuntimeWrappedContextInstance,
+	contextOptions: EnkoreJSRuntimeContextOptions,
 	dependencies: AnioJsDependencies,
 	src: string,
 	dest: string
 ) : Promise<undefined> {
 //>) : undefined {
-	const context = useContext(wrapped_context, 0)
+	const context = createContext(contextOptions, 0)
 
 	context.log.debug(
 		`attempting to copy '${src}' to '${dest}'.`
