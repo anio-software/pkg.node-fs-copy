@@ -104,21 +104,21 @@ export async function __implementation(
 
 	context.log.debug(`attempting to copy '${src}' to '${dest}'.`)
 
-	const path_type = await dependencies.getTypeOfPath(src)
-//>	const path_type = dependencies.getTypeOfPath(src)
+	const pathType = await dependencies.getTypeOfPath(src)
+//>	const pathType = dependencies.getTypeOfPath(src)
 
-	if (path_type === "nonExisting") {
+	if (pathType === "nonExisting") {
 		throw new Error(`source path '${src}' does not exist.`)
 	}
 
 	if (
-		(!(path_type in copyMap)) ||
-		path_type === "unknown"
+		(!(pathType in copyMap)) ||
+		pathType === "unknown"
 	) {
-		throw new Error(`Don't know how to copy path of type '${path_type}'.`)
+		throw new Error(`Don't know how to copy path of type '${pathType}'.`)
 	}
 
-	const copy_fn = copyMap[path_type]
+	const copy_fn = copyMap[pathType]
 
 	await copy_fn(src, dest)
 //>	copy_fn(src, dest)
