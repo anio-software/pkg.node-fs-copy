@@ -8,7 +8,7 @@ import {readlink, symlink, copyFile, mkdir} from "@anio-software/pkg-private.nod
 
 import path from "node:path"
 
-import type {PathType} from "@anio-software/pkg.node-fs-path-type"
+import type {ValidPathType} from "@anio-software/pkg.node-fs-path-type"
 
 import type {getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
 //>import type {getTypeOfPathSync as getTypeOfPath} from "@anio-software/pkg.node-fs-path-type"
@@ -75,11 +75,9 @@ async function copyDirectory(
 	return undefined
 }
 
-type CopyablePathType = Exclude<PathType, "unknown" | "nonExisting">
-
 const copy_map : {
-	[T in CopyablePathType]: (src: string, dst: string) => Promise<undefined>
-//>	[T in CopyablePathType]: (src: string, dst: string) => undefined
+	[T in ValidPathType]: (src: string, dst: string) => Promise<undefined>
+//>	[T in ValidPathType]: (src: string, dst: string) => undefined
 } = {
 	"linkToDir": copySymbolicLink,
 	"linkToFile": copySymbolicLink,
