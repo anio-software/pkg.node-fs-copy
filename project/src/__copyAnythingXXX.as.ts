@@ -12,9 +12,13 @@ import {copySymbolicLink} from "./copySymbolicLink.ts"
 import {copyDirectory} from "./copyDirectory.ts"
 //>import {copyDirectorySync as copyDirectory} from "./copyDirectorySync.ts"
 
+import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/Dependencies.ts"
+//>import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/DependenciesSync.ts"
+
 export async function copyAnything(
 //>export function copyAnythingSync(
 	context: EnkoreJSRuntimeContext,
+	dependencies: Dependencies,
 	options: CopyOptions,
 	pathType: CopyablePathType,
 	pathInfo: PathInformation,
@@ -30,6 +34,7 @@ export async function copyAnything(
 		return await copySymbolicLink(
 //>		return copySymbolicLink(
 			context,
+			dependencies,
 			options,
 			pathInfo,
 			source,
@@ -39,6 +44,7 @@ export async function copyAnything(
 		return await copyDirectory(
 //>		return copyDirectory(
 			context,
+			dependencies,
 			options,
 			pathInfo,
 			source,
@@ -48,6 +54,7 @@ export async function copyAnything(
 		return await copyFile(
 //>		return copyFile(
 			context,
+			dependencies,
 			options,
 			pathInfo,
 			source,

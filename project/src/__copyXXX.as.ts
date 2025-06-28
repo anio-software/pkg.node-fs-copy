@@ -39,6 +39,7 @@ export async function __implementation(
 	return await copyAnything(
 //>	return copyAnything(
 		context,
+		dependencies,
 		options,
 		pathType,
 		pathInfo,
