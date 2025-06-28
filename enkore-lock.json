@@ -35,10 +35,10 @@
             "hash": "ced029c570e6a441eb49f70501ad485da9467268dd1fa1caf38a7004fe6de5af"
         },
         "project/src/copy.ts": {
-            "hash": "5e8bdfc542c5b9138ee5df874e1484480ef05bd085e4fd0d62ba3ff7f88c5e77"
+            "hash": "e6b4d166993b72a72df24414b0431108234512e13c5910350b3cb463a484a928"
         },
         "project/src/copySync.ts": {
-            "hash": "7e8e8686471b96e19c2ae5200ab42cd849bdb864a113fd39e38feb9a1d4dffe7"
+            "hash": "327209224c90d3d9d82f0e9ae5c53e974953e3fb5708196f62a52f94c2cf72f5"
         }
     },
     "toolchain": [
