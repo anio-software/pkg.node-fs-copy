@@ -2,6 +2,8 @@
 # DO NOT ADD ENTRIES HERE, THEY WILL BE REMOVED
 /src/Dependencies.ts
 /src/DependenciesSync.ts
+/src/copyAnything.ts
+/src/copyAnythingSync.ts
 /src/copyDirectory.ts
 /src/copyDirectorySync.ts
 /src/copyFile.ts
