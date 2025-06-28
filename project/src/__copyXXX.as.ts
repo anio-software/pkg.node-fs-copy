@@ -48,11 +48,11 @@ async function copyDirectory(
 //>	scandirCallback(src, {
 		async callback(entry) {
 //>		callback(entry) {
-			const {type, relative_path, absolute_path} = entry
-			const entry_src = absolute_path
-			const entry_dest = path.join(dest, relative_path)
+			const {type, relativePath, absolutePath} = entry
+			const entrySrc = absolutePath
+			const entryDest = path.join(dest, relativePath)
 
-			const args: [string, string] = [entry_src, entry_dest]
+			const args: [string, string] = [entrySrc, entryDest]
 
 			if (
 			    type === "linkToFile" ||
