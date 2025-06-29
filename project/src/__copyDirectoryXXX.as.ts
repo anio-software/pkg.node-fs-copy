@@ -35,6 +35,7 @@ export async function copyDirectory(
 		return await dependencies.scandirCallback(source, {
 //>		return dependencies.scandirCallback(source, {
 			includePathInformation: true,
+			maxDepth: 0,
 			async callback(entry, {stopLoop}) {
 //>			callback(entry, {stopLoop}) {
 				const res = await copyAnything(
