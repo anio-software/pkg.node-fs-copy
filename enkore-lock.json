@@ -11,16 +11,16 @@
             "hash": "aab8279835bcb92e8d0a7790d72f8d81fa91d6e23694eee988ddcf11b65f4503"
         },
         "project/src/copyAnything.ts": {
-            "hash": "299da43b0b42524f5ee11870ff34ee45ede8aad98ccbfdefcfef6cb2c1efbe90"
+            "hash": "618503634454080cd3ba298922f4285bca452ad750929c9c4a98e336134d7a7e"
         },
         "project/src/copyAnythingSync.ts": {
-            "hash": "cd7ab0995438f18c1b71b601c6839b13caae716d15ca5af5bac55628602a89d2"
+            "hash": "c197a434cbc471b8757b984d382797f310fde6d8087148117f2be75ef5e9dc4e"
         },
         "project/src/copyDirectory.ts": {
-            "hash": "9a802c2413bedc1096e6d14360275738830b9c6ae9064f02887de05ac3f6f8d4"
+            "hash": "be60d2a20f08b6ff3d51d08291b5fddf9541e298e4176d02a95b98c00175eb57"
         },
         "project/src/copyDirectorySync.ts": {
-            "hash": "3f9c3c46fe8bd4df9054cd8e973f92533c1eeac8bc1f7f8325a3a7a5bad32175"
+            "hash": "7cb79bd760442bd57eb4f5e01841e7b684bcb4622da4635054a28ee474f3f185"
         },
         "project/src/copyFile.ts": {
             "hash": "5e8501988200c774e10b57b30db41a3a5ac0c7b966b2f6db4bbd4698f0aaa5ab"
@@ -35,10 +35,10 @@
             "hash": "76497f1c70dfc078bed834256fb6d314ff48dbc4bcfd54fd2d0f4d7680265ad3"
         },
         "project/src/copy.ts": {
-            "hash": "8f5473bd06fa5217e98c41ba724042958c5070a41eeeb0bc6d3095c4e290f914"
+            "hash": "2626050acd07610c466d3b3c7be71e440d5db154d8eda0988f82732a6f7715dd"
         },
         "project/src/copySync.ts": {
-            "hash": "40b2e620bf18015f6fd001769a21d9fac29bd4a6ad4fc52db822e1256b1b3da9"
+            "hash": "6a726456c724c0f4488d1c1516641fa26c769a3c8997f8b291e7a3bd2aac4091"
         },
         "project/export/copyFactory.ts": {
             "hash": "f12930bd442051f73d6035541224e4ac9341fa06c8c57cc87b0338be1539bf74"

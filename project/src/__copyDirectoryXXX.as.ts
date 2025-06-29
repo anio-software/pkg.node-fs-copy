@@ -43,7 +43,7 @@ export async function copyDirectory(
 					context,
 					dependencies,
 					options,
-					entry.pathType as any,
+					entry.pathType,
 					entry.information!,
 					entry.absolutePath,
 					path.join(destination, entry.relativePath)

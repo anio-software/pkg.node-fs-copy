@@ -27,15 +27,6 @@ export async function __implementation(
 	const pathInfo = await dependencies.getPathInformation(options.source)
 //>	const pathInfo = dependencies.getPathInformation(options.source)
 
-	if (
-	    pathType === "error"       ||
-	    pathType === "nonExisting"
-	    ) {
-		context.log.warn(`unable to copy path '${options.source}' due to an error.`)
-
-		return false
-	}
-
 	return await copyAnything(
 //>	return copyAnything(
 		context,

@@ -1,9 +1,7 @@
 import type {EnkoreJSRuntimeContext} from "@anio-software/enkore.js-runtime"
 import type {CopyOptions} from "#~export/CopyOptions.ts"
-import type {ValidPathType} from "@anio-software/pkg.node-fs-path-type"
+import type {PathType} from "@anio-software/pkg.node-fs-path-type"
 import type {PathInformation} from "@anio-software/pkg.node-fs-stat-path"
-
-export type CopyablePathType = ValidPathType | "link:error"
 
 import {copyFile} from "./copyFile.ts"
 //>import {copyFileSync as copyFile} from "./copyFileSync.ts"
@@ -11,7 +9,6 @@ import {copySymbolicLink} from "./copySymbolicLink.ts"
 //>import {copySymbolicLinkSync as copySymbolicLink} from "./copySymbolicLinkSync.ts"
 import {copyDirectory} from "./copyDirectory.ts"
 //>import {copyDirectorySync as copyDirectory} from "./copyDirectorySync.ts"
-
 import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/Dependencies.ts"
 //>import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/DependenciesSync.ts"
 
@@ -20,7 +17,7 @@ export async function copyAnything(
 	context: EnkoreJSRuntimeContext,
 	dependencies: Dependencies,
 	options: CopyOptions,
-	pathType: CopyablePathType,
+	pathType: PathType,
 	pathInfo: PathInformation,
 	source: string,
 	destination: string
@@ -61,6 +58,8 @@ export async function copyAnything(
 			destination
 		)
 	}
+
+	context.log.warn(`unable to copy path '${options.source}' due to an invalid path type.`)
 
 	return false
 }
