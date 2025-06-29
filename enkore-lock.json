@@ -29,10 +29,10 @@
             "hash": "99e1e046534d3880651e5c9795d9336cf27e0aa76424900344f7bcf731665423"
         },
         "project/src/copySymbolicLink.ts": {
-            "hash": "bda8fa42df3b74268514fb6ab39ecf62b730a2629e43a2c547aad5bd4a4b5311"
+            "hash": "698c4c0a03a4a6ef410fe708d0dbb3ba33b57092877a2f97931ccf319ddc2e84"
         },
         "project/src/copySymbolicLinkSync.ts": {
-            "hash": "47ffeeaa6a2986e7007663fef87e98700467dd55155c84deee98f75c41291ec8"
+            "hash": "76497f1c70dfc078bed834256fb6d314ff48dbc4bcfd54fd2d0f4d7680265ad3"
         },
         "project/src/copy.ts": {
             "hash": "8f5473bd06fa5217e98c41ba724042958c5070a41eeeb0bc6d3095c4e290f914"
