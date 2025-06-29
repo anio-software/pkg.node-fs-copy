@@ -17,10 +17,10 @@
             "hash": "cd7ab0995438f18c1b71b601c6839b13caae716d15ca5af5bac55628602a89d2"
         },
         "project/src/copyDirectory.ts": {
-            "hash": "2d615f28a7882201fcfe9cfeffd6bb9f6e4166657aa0194385fae967b398cb20"
+            "hash": "d471cceee3d84a437b7a9ed5efaf98b67e5c9fd29078c40597a7329346c8657c"
         },
         "project/src/copyDirectorySync.ts": {
-            "hash": "719986979247ca93399b4ac7fa345bda2888948428e03ab61922aaaf02bc2535"
+            "hash": "1bdd707781ea1cdc043963a66bf5605aca656806905dc5969ab08aeb128b7c89"
         },
         "project/src/copyFile.ts": {
             "hash": "5e8501988200c774e10b57b30db41a3a5ac0c7b966b2f6db4bbd4698f0aaa5ab"
