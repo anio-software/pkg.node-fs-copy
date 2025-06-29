@@ -12,3 +12,7 @@
 /src/copySymbolicLinkSync.ts
 /src/copy.ts
 /src/copySync.ts
+/export/copyFactory.ts
+/export/copy.ts
+/export/copySyncFactory.ts
+/export/copySync.ts

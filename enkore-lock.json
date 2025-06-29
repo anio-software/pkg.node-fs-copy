@@ -39,6 +39,18 @@
         },
         "project/src/copySync.ts": {
             "hash": "40b2e620bf18015f6fd001769a21d9fac29bd4a6ad4fc52db822e1256b1b3da9"
+        },
+        "project/export/copyFactory.ts": {
+            "hash": "f12930bd442051f73d6035541224e4ac9341fa06c8c57cc87b0338be1539bf74"
+        },
+        "project/export/copy.ts": {
+            "hash": "5fc61b4205f6240e26dda8575affd8ef964b5da7871f9fc64ff2df75b4024a62"
+        },
+        "project/export/copySyncFactory.ts": {
+            "hash": "b7ec51c9fc497e960f26277656d28a126d73e58812c6c2852e7ff10ca9b1bfe0"
+        },
+        "project/export/copySync.ts": {
+            "hash": "545507753093892aac314d7ea7c471d320ecba04648b1c6ab3a26a537d8329fe"
         }
     },
     "toolchain": [
