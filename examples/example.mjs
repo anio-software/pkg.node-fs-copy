@@ -1,7 +1,10 @@
-import {copy} from "../dist/default/index.min.mjs"
+import {copy} from "../products/project/dist/default/index.min.mjs"
 
 console.log(
-	await copy("examples/src", "examples/dest/p")
+	await copy({
+		source: "examples/src",
+		destination: "examples/dest"
+	})
 )
 
 console.log("done")
