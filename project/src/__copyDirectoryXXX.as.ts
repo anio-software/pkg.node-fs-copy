@@ -2,8 +2,8 @@ import type {EnkoreJSRuntimeContext} from "@anio-software/enkore.js-runtime"
 
 import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/Dependencies.ts"
 //>import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/DependenciesSync.ts"
-import {mkdir} from "@anio-software/pkg-private.node-consistent-fs/async"
-//>import {mkdir} from "@anio-software/pkg-private.node-consistent-fs/sync"
+import {mkdir, chown} from "@anio-software/pkg-private.node-consistent-fs/async"
+//>import {mkdir, chown} from "@anio-software/pkg-private.node-consistent-fs/sync"
 import {copyAnything} from "#~src/copyAnything.ts"
 //>import {copyAnythingSync as copyAnything} from "#~src/copyAnythingSync.ts"
 
@@ -30,6 +30,15 @@ export async function copyDirectory(
 			mode: pathInformation.permissions.mode,
 			recursive: false
 		})
+
+		if (options.copyOwner === true) {
+			await chown(
+//>			chown(
+				destination,
+				pathInformation.permissions.owner.user,
+				pathInformation.permissions.owner.group
+			)
+		}
 
 		return await dependencies.scandirCallback(source, {
 //>		return dependencies.scandirCallback(source, {

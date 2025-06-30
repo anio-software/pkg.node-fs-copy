@@ -13,4 +13,9 @@ export type CopyOptions = {
 	 * @brief Whether to delete destination path if it exists.
 	 */
 	overwriteDestination?: boolean
+
+	/**
+	 * @brief Whether to copy owner information.
+	 */
+	copyOwner?: boolean
 }

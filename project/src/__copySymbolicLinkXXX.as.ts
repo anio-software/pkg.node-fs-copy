@@ -2,8 +2,8 @@ import type {EnkoreJSRuntimeContext} from "@anio-software/enkore.js-runtime"
 
 import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/Dependencies.ts"
 //>import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/DependenciesSync.ts"
-import {readlink, symlink} from "@anio-software/pkg-private.node-consistent-fs/async"
-//>import {readlink, symlink} from "@anio-software/pkg-private.node-consistent-fs/sync"
+import {readlink, symlink, lchown} from "@anio-software/pkg-private.node-consistent-fs/async"
+//>import {readlink, symlink, lchown} from "@anio-software/pkg-private.node-consistent-fs/sync"
 
 import type {CopyOptions} from "#~export/CopyOptions.ts"
 import type {PathInformation} from "@anio-software/pkg.node-fs-stat-path"
@@ -27,6 +27,15 @@ export async function copySymbolicLink(
 
 		await symlink(link, destination)
 //>		symlink(link, destination)
+
+		if (options.copyOwner === true) {
+			await lchown(
+//>			lchown(
+				destination,
+				pathInformation.permissions.owner.user,
+				pathInformation.permissions.owner.group
+			)
+		}
 
 		return true
 	} catch (e) {
