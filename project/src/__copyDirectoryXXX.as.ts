@@ -46,13 +46,17 @@ export async function copyDirectory(
 			maxDepth: 0,
 			async callback(entry, {stopLoop}) {
 //>			callback(entry, {stopLoop}) {
+				if (!entry.information) {
+					return stopLoop(false)
+				}
+
 				const res = await copyAnything(
 //>				const res = copyAnything(
 					context,
 					dependencies,
 					options,
 					entry.pathType,
-					entry.information!,
+					entry.information,
 					entry.absolutePath,
 					path.join(destination, entry.relativePath)
 				)
