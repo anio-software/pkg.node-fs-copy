@@ -3,8 +3,8 @@ import {
 	createContext
 } from "@anio-software/enkore.js-runtime"
 
-import type {CopyOptions} from "#~export/CopyOptions.ts"
-//>import type {CopySyncOptions as CopyOptions} from "#~export/CopySyncOptions.ts"
+import type {CopyOptions as Options} from "#~export/CopyOptions.ts"
+//>import type {CopySyncOptions as Options} from "#~export/CopySyncOptions.ts"
 import type {__EnkoreFunctionDependencies} from "#~src/Dependencies.ts"
 //>import type {__EnkoreFunctionDependencies} from "#~src/DependenciesSync.ts"
 import {copyAnything} from "#~src/copyAnything.ts"
@@ -16,7 +16,7 @@ export async function __implementation(
 //>export function __implementationSync(
 	contextOptions: EnkoreJSRuntimeContextOptions,
 	dependencies: __EnkoreFunctionDependencies,
-	options: CopyOptions
+	options: Options
 ): Promise<boolean> {
 //>): boolean {
 	const context = createContext(contextOptions, 0)

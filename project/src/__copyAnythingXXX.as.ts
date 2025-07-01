@@ -2,8 +2,8 @@ import type {EnkoreJSRuntimeContext} from "@anio-software/enkore.js-runtime"
 import type {PathType} from "@anio-software/pkg.node-fs-path-type"
 import type {PathInformation} from "@anio-software/pkg.node-fs-stat-path"
 
-import type {CopyOptions} from "#~export/CopyOptions.ts"
-//>import type {CopySyncOptions as CopyOptions} from "#~export/CopySyncOptions.ts"
+import type {CopyOptions as Options} from "#~export/CopyOptions.ts"
+//>import type {CopySyncOptions as Options} from "#~export/CopySyncOptions.ts"
 import {copyFile} from "./copyFile.ts"
 //>import {copyFileSync as copyFile} from "./copyFileSync.ts"
 import {copySymbolicLink} from "./copySymbolicLink.ts"
@@ -19,7 +19,7 @@ export async function copyAnything(
 //>export function copyAnythingSync(
 	context: EnkoreJSRuntimeContext,
 	dependencies: Dependencies,
-	options: CopyOptions,
+	options: Options,
 	pathType: PathType,
 	pathInfo: PathInformation,
 	source: string,

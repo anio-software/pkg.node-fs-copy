@@ -1,7 +1,7 @@
 import type {EnkoreJSRuntimeContext} from "@anio-software/enkore.js-runtime"
 
-import type {CopyOptions} from "#~export/CopyOptions.ts"
-//>import type {CopySyncOptions as CopyOptions} from "#~export/CopySyncOptions.ts"
+import type {CopyOptions as Options} from "#~export/CopyOptions.ts"
+//>import type {CopySyncOptions as Options} from "#~export/CopySyncOptions.ts"
 import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/Dependencies.ts"
 //>import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/DependenciesSync.ts"
 import {mkdir, chown} from "@anio-software/pkg-private.node-consistent-fs/async"
@@ -17,7 +17,7 @@ export async function copyDirectory(
 //>export function copyDirectorySync(
 	context: EnkoreJSRuntimeContext,
 	dependencies: Dependencies,
-	options: CopyOptions,
+	options: Options,
 	pathInformation: PathInformation,
 	source: string,
 	destination: string
