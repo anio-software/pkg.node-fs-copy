@@ -22,6 +22,8 @@ export async function __implementation(
 	const context = createContext(contextOptions, 0)
 
 	if (options.overwriteDestination === true) {
+		context.log.debug(`overwriteDestination is set, trying to remove destination '${options.destination}'`)
+
 		const removedSuccessfully = await dependencies.remove(
 //>		const removedSuccessfully = dependencies.remove(
 			options.destination, {
