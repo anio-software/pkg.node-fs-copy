@@ -13,6 +13,8 @@ import {copyDirectory} from "./copyDirectory.ts"
 import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/Dependencies.ts"
 //>import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/DependenciesSync.ts"
 
+import {isFunction} from "@anio-software/pkg.is"
+
 export async function copyAnything(
 //>export function copyAnythingSync(
 	context: EnkoreJSRuntimeContext,
@@ -24,6 +26,19 @@ export async function copyAnything(
 	destination: string
 ): Promise<boolean> {
 //>): boolean {
+	if (isFunction(options.filter)) {
+		const shouldBeCopied = await options.filter(
+//>		const shouldBeCopied = options.filter(
+			source, pathType, pathInfo
+		)
+
+		if (shouldBeCopied !== true) {
+			context.log.debug(`skipping '${source}'`)
+
+			return true
+		}
+	}
+
 	if (
 	    pathType === "link:file"   ||
 	    pathType === "link:dir"    ||
