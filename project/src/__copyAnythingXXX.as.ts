@@ -1,8 +1,9 @@
 import type {EnkoreJSRuntimeContext} from "@anio-software/enkore.js-runtime"
-import type {CopyOptions} from "#~export/CopyOptions.ts"
 import type {PathType} from "@anio-software/pkg.node-fs-path-type"
 import type {PathInformation} from "@anio-software/pkg.node-fs-stat-path"
 
+import type {CopyOptions} from "#~export/CopyOptions.ts"
+//>import type {CopySyncOptions as CopyOptions} from "#~export/CopySyncOptions.ts"
 import {copyFile} from "./copyFile.ts"
 //>import {copyFileSync as copyFile} from "./copyFileSync.ts"
 import {copySymbolicLink} from "./copySymbolicLink.ts"

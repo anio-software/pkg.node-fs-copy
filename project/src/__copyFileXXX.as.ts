@@ -1,11 +1,12 @@
 import type {EnkoreJSRuntimeContext} from "@anio-software/enkore.js-runtime"
 
+import type {CopyOptions} from "#~export/CopyOptions.ts"
+//>import type {CopySyncOptions as CopyOptions} from "#~export/CopySyncOptions.ts"
 import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/Dependencies.ts"
 //>import type {__EnkoreFunctionDependencies as Dependencies} from "#~src/DependenciesSync.ts"
 import {copyFile as _copyFile, chmod, chown} from "@anio-software/pkg-private.node-consistent-fs/async"
 //>import {copyFile as _copyFile, chmod, chown} from "@anio-software/pkg-private.node-consistent-fs/sync"
 
-import type {CopyOptions} from "#~export/CopyOptions.ts"
 import type {PathInformation} from "@anio-software/pkg.node-fs-stat-path"
 import {getOrCreateError} from "@anio-software/pkg.js-utils"
 

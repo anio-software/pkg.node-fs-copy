@@ -1,5 +1,7 @@
 # This file is automatically managed by enkore
 # DO NOT ADD ENTRIES HERE, THEY WILL BE REMOVED
+/src/CopyOptions.ts
+/src/CopySyncOptions.ts
 /src/Dependencies.ts
 /src/DependenciesSync.ts
 /src/copyAnything.ts

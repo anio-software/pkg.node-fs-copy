@@ -7,8 +7,9 @@ import type {__EnkoreFunctionDependencies} from "#~src/Dependencies.ts"
 //>import type {__EnkoreFunctionDependencies} from "#~src/DependenciesSync.ts"
 import {copyAnything} from "#~src/copyAnything.ts"
 //>import {copyAnythingSync as copyAnything} from "#~src/copyAnythingSync.ts"
-
 import type {CopyOptions} from "#~export/CopyOptions.ts"
+//>import type {CopySyncOptions as CopyOptions} from "#~export/CopySyncOptions.ts"
+
 export type {__EnkoreFunctionDependencies}
 
 export async function __implementation(
