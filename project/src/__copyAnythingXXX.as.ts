@@ -26,9 +26,9 @@ export async function copyAnything(
 	destination: string
 ): Promise<boolean> {
 //>): boolean {
-	if (isFunction(options.filter)) {
-		const shouldBeCopied = await options.filter(
-//>		const shouldBeCopied = options.filter(
+	if (isFunction(options.shouldCopyEntry)) {
+		const shouldBeCopied = await options.shouldCopyEntry(
+//>		const shouldBeCopied = options.shouldCopyEntry(
 			source, pathType, pathInfo
 		)
 

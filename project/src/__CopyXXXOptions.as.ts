@@ -5,7 +5,7 @@ export type __XX__ = {
 	/**
 	 * @brief Decide whether to copy an entry or not.
 	 */
-	filter?: (
+	shouldCopyEntry?: (
 		relativeSourcePath: string,
 		pathType: PathType,
 		pathInformation: PathInformation
