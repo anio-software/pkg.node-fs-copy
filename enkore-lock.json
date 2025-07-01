@@ -41,10 +41,10 @@
             "hash": "3135a613b0c87087201919615504dd8c8ad3c1a25c838883b65b459cb1b74ca5"
         },
         "project/src/copy.ts": {
-            "hash": "86a234a686c65a71ca4e8bdd953cc6a2b5e483cc385af694b10ecc976dc3a5d3"
+            "hash": "c19715687110ffdfc6540f95b93b0e2519666732fbeae124ce596add702bcfdf"
         },
         "project/src/copySync.ts": {
-            "hash": "da8bc61003a700dcb7683ae1208c2108c75835f73066068cd9f243c1f652fcd2"
+            "hash": "4463733895dcc30b674dac0ff99886080e145dd167d181243def3442c6bbed8b"
         },
         "project/export/copyFactory.ts": {
             "hash": "f12930bd442051f73d6035541224e4ac9341fa06c8c57cc87b0338be1539bf74"
