@@ -21,6 +21,21 @@ export async function __implementation(
 //>): boolean {
 	const context = createContext(contextOptions, 0)
 
+	if (options.overwriteDestination === true) {
+		const removedSuccessfully = await dependencies.remove(
+//>		const removedSuccessfully = dependencies.remove(
+			options.destination, {
+				force: true
+			}
+		)
+
+		if (!removedSuccessfully) {
+			context.log.error(`unable to remove destination '${options.destination}'.`)
+
+			return false
+		}
+	}
+
 	const pathType = await dependencies.getTypeOfPath(options.source)
 //>	const pathType = dependencies.getTypeOfPath(options.source)
 
