@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "name": "@anio-software/pkg.node-fs-copy",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Copy a path of any type.",
   "author": "Anio Software <info@anio.software>",
   "repository": {
