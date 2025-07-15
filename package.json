@@ -20,6 +20,6 @@
     "@anio-software/pkg.node-fs-path-type": "^0.0.22",
     "@anio-software/pkg.node-fs-remove": "^0.0.21",
     "@anio-software/pkg.node-fs-scandir": "^0.0.21",
-    "@anio-software/pkg.node-fs-stat-path": "^0.0.20"
+    "@anio-software/pkg.node-fs-stat-path": "^0.0.22"
   }
 }
